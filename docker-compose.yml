@@ -1,0 +1,24 @@
+version: "3"
+services:
+  jupyter1:
+    image: jupyter/tensorflow-notebook
+    container_name: jupyter_scipy_tensorflow
+    ports:
+      - 10000:8888
+    volumes:
+      - ./test:/home/jovyan/work
+    environment:
+      # JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: "docker"
+
+
+  jupyter2:
+    image: jupyter/pyspark-notebook
+    container_name: jupyter_scipy_pyspark
+    ports:
+      - 10001:8888
+    volumes:
+      - ./test:/home/jovyan/work
+    environment:
+      # JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: "docker"
